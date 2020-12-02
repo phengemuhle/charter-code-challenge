@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./home.css";
 
-const AreYouSure = () => {
+const AreYouSurePage = () => {
   return (
     <div style={styles.mainContainer}>
       <div>
@@ -34,10 +34,10 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "black",
-    height: "100vw",
+    height: "100%",
     color: "white",
     flexDirection: "column",
   },
 };
 
-export default AreYouSure;
+export default AreYouSurePage;
