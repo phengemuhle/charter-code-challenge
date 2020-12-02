@@ -39,4 +39,5 @@ const styles = {
     flexDirection: "column",
   },
 };
+
 export default AreYouSure;
