@@ -5,7 +5,7 @@ table {
   width: 100%;
 }
 
-thead, tbody, tr {
+thead, tr {
   display: table;
   width: 100%;
   table-layout: fixed;
@@ -15,34 +15,12 @@ tbody {
   display: block;
   overflow: auto;
   table-layout: fixed;
-  max-height: 50vh;
+  max-height: 60vh;
+  width: 100%;
 }
-.name{
-  text-overflow: ellipsis;
-  max-width: 25%;  
-  min-width: 25%;
-}
-.city{
-  max-width: 15%;  
-  min-width: 15%;
-}
-.state{
-  max-width: 2rem;  
-  min-width: 2rem;
-}
-.phone{
-  max-width: 20%;  
-  min-width: 20%;
-}
-.genre{
+
+.genre, .attire{
   text-overflow: wrap;
-  max-width: 30%;  
-  min-width: 30%;
-}
-.card{
-  text-overflow: ellipsis;
-  max-width: 100%;  
-  min-width: 100%;
 }
 
  tr{
@@ -57,23 +35,7 @@ tbody {
    height:1.5rem
  }
 
- .address{
-  text-overflow: ellipsis;
-  max-width: 30%;  
-  min-width: 30%;
-}
-.hours{
-  text-overflow: ellipsis;
-  max-width: 30%;  
-  min-width: 30%;
-}
-.website{
-  text-overflow: ellipsis;
-  max-width: 30%;  
-  min-width: 30%;
-}
-.attire{
-  text-overflow: ellipsis;
-  max-width: 30%;  
-  min-width: 30%;
+ .address, .hours, .attire, .website{
+  text-overflow: wrap;
+  width: 20%;
 }

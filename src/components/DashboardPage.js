@@ -48,7 +48,6 @@ const styles = {
   tableContainer: {
     width: "90%",
     overflow: "auto",
-    // "overflow-y": "scroll",
   },
 };
 

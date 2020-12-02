@@ -53,37 +53,36 @@ const Table = (props) => {
                 handleClick(value.id);
               }}
             >
-              <td className="name col-3">{value.name}</td>
-              <td className="city col-3">{value.city}</td>
-              <td className="state col-1">{value.state}</td>
-              <td className="phone col-2">{value.telephone}</td>
-              <td className="genre col-3">{value.genre}</td>
+              <td className="name">{value.name}</td>
+              <td className="city">{value.city}</td>
+              <td className="state">{value.state}</td>
+              <td className="phone">{value.telephone}</td>
+              <td className="genre">{value.genre.replace(/,/g, ", ")}</td>
             </tr>
-            <tr
-              key={value.id}
+            <table
               onClick={() => {
                 handleClick(value.id);
               }}
             >
-              <table>
-                <thead>
-                  <tr>
-                    <th className="address col-3">Street Address</th>
-                    <th className="hours col-3">Hours</th>
-                    <th className="website col-3">Website</th>
-                    <th className="attire col-3">Attire</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <td className="address col-3">{value.address1}</td>
-                  <td className="hours col-3">
-                    {value.hours.replace(/;/g, "\n")}
-                  </td>
-                  <td className="website col-3">{value.website}</td>
-                  <td className="attire col-3">{value.attire}</td>
-                </tbody>
-              </table>
-            </tr>
+              <thead>
+                <tr>
+                  <th>Street Address</th>
+                  <th>Hours</th>
+                  <th>Website</th>
+                  <th>Attire</th>
+                  <th>Tags</th>
+                </tr>
+              </thead>
+              <tbody>
+                <td className="address">{value.address1}</td>
+                <td className="hours">{value.hours.replace(/;/g, "\n")}</td>
+                <td className="website">{value.website}</td>
+                <td className="attire">{value.attire}</td>
+                <td className="attire">
+                  {value.tags.replace(/,/g, ", ").replace(/}/g, "")}
+                </td>
+              </tbody>
+            </table>
           </>
         )}
       </>
@@ -94,11 +93,21 @@ const Table = (props) => {
     <table>
       <thead>
         <tr>
-          <th className="name">Name</th>
-          <th className="city">City</th>
-          <th className="state">State</th>
-          <th className="phone">Phone</th>
-          <th className="genre">Genre</th>
+          <th style={{ maxWidth: "1rem" }} className="name">
+            Name
+          </th>
+          <th style={{ maxWidth: "1rem" }} className="city">
+            City
+          </th>
+          <th style={{ maxWidth: "1rem" }} className="state">
+            State
+          </th>
+          <th style={{ maxWidth: "1rem" }} className="phone">
+            Phone
+          </th>
+          <th style={{ maxWidth: "1rem" }} className="genre">
+            Genre
+          </th>
         </tr>
       </thead>
       <tbody>{tableRow}</tbody>
