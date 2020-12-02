@@ -1,0 +1,108 @@
+.questionText{
+    display: flex;
+    font-size: 2rem;
+    justify-content: center;
+}
+.shared{
+    padding: 1rem;
+    justify-content: center;
+    border: 1px solid black;
+    background: white;
+    display: inline-block; 
+    font-size: 2em; 
+    font-weight: bold;
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    border-radius: 4rem;
+    cursor: pointer;
+    position: relative;
+    color: black;
+    overflow: hidden;
+    z-index: 100;
+    transition: all .5s;
+    height: 5rem;
+    width: 12rem;
+    margin: 2rem;
+   }
+   
+   .greenButton > span, .redButton > span{
+   position: relative;
+   display: block;
+   z-index: 100;
+   }
+   .greenButton:hover{
+   color: white;
+   background: #5ad060; 
+   }
+   
+   .greenButton:before{
+   position: absolute;
+   content: '';
+   height: 100%;
+   width: 100%;
+   background: #118e11; 
+   top: 0;
+   left: 0;
+   -webkit-transform: skew(-10deg) translate3d(-103%,0,0);
+   transform: skew(-10deg) translate3d(-103%,0,0); 
+   border-right: 1px solid #118e11;
+   transition: all .5s;
+   }
+   
+   .greenButton:hover:before,.redButton:hover:before{
+   -webkit-transform: skew(-10deg) translate3d(-50%,0,0);
+   transform: skew(-10deg) translate3d(-50%,0,0); 
+   }
+   
+   .greenButton.dualslide:after{
+   position: absolute;
+   content: '';
+   height: 100%;
+   width: 100%;
+   background:#5ad060; 
+   top: 0;
+   left: 0;
+   -webkit-transform: skew(-10deg) translate3d(-103%,0,0);
+   transform: skew(-10deg) translate3d(103%,0,0); 
+   border-right: 1px solid #5ad060;
+   transition: all .5s;
+   }
+   
+   .greenButton.dualslide:hover:after, .redButton.dualslide:hover:after{
+   -webkit-transform: skew(-10deg) translate3d(50%,0,0);
+   transform: skew(-10deg) translate3d(50%,0,0);
+   } 
+
+   .redButton:hover{
+   color: white;
+   background: #BC3A31; 
+   }
+   
+   .redButton:before{
+   position: absolute;
+   content: '';
+   height: 100%;
+   width: 100%;
+   background: #8E1911; 
+   top: 0;
+   left: 0;
+   -webkit-transform: skew(-10deg) translate3d(-103%,0,0);
+   transform: skew(-10deg) translate3d(-103%,0,0); 
+   border-right: 1px solid #8E1911;
+   transition: all .5s;
+   }
+  
+   .redButton.dualslide:after{
+   position: absolute;
+   content: '';
+   height: 100%;
+   width: 100%;
+   background: #e9655c; 
+   top: 0;
+   left: 0;
+   -webkit-transform: skew(-10deg) translate3d(-103%,0,0);
+   transform: skew(-10deg) translate3d(103%,0,0); 
+   border-right: 1px solid #e9655c;
+   transition: all .5s;
+   }
