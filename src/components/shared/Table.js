@@ -2,21 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./Table.css";
 
 const Table = (props) => {
-  const [data, setData] = useState(props.fetch);
   const [display, setDisplay] = useState([]);
   const [isSelected, setIsSelected] = useState([]);
-  const [page, setPage] = useState(props.page);
+
   useEffect(() => {
-    setPage(props.page);
-  }, [props.page]);
-  useEffect(() => {
-    const paged = data.filter((value, index) => {
-      if (index >= page.min && index <= page.max) {
-        return value;
-      }
-    });
-    setDisplay(paged);
-  }, [page]);
+    console.log("to table", props.fetch);
+    setDisplay(props.fetch);
+  }, [props.fetch]);
 
   const handleClick = (id) => {
     if (isSelected.includes(id)) {
@@ -28,8 +20,6 @@ const Table = (props) => {
   };
 
   const tableRow = display.map((value, i) => {
-    console.log(value);
-
     return (
       <>
         {!isSelected.includes(value.id) ? (
@@ -88,29 +78,32 @@ const Table = (props) => {
       </>
     );
   });
-
   return (
     <table>
       <thead>
         <tr>
-          <th style={{ maxWidth: "1rem" }} className="name">
-            Name
-          </th>
-          <th style={{ maxWidth: "1rem" }} className="city">
-            City
-          </th>
-          <th style={{ maxWidth: "1rem" }} className="state">
-            State
-          </th>
-          <th style={{ maxWidth: "1rem" }} className="phone">
-            Phone
-          </th>
-          <th style={{ maxWidth: "1rem" }} className="genre">
-            Genre
-          </th>
+          <th className="name">Name</th>
+          <th className="city">City</th>
+          <th className="state">State</th>
+          <th className="phone">Phone</th>
+          <th className="genre">Genre</th>
         </tr>
       </thead>
-      <tbody>{tableRow}</tbody>
+      <tbody>
+        {display.length === 0 ? (
+          <>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>Please try your search again.</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </>
+        ) : (
+          [tableRow]
+        )}
+      </tbody>
     </table>
   );
 };
