@@ -44,7 +44,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "black",
-    height: "100vw",
+    height: "100%",
     color: "white",
     flexDirection: "column",
   },
