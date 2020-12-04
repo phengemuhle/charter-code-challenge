@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const SearchField = (props) => {
   const [term, setTerm] = useState("");
@@ -8,15 +8,26 @@ const SearchField = (props) => {
     }
   };
 
+  const handleOnChage = (e) => {
+    if (e.target.value === "") {
+      return props.onSearch(e);
+    } else {
+      setTerm(e);
+    }
+  };
+
   return (
-    <div>
-      <input
-        type="text"
-        onKeyDown={(e) => handleKeyDown(e)}
-        placeholder="Search.."
-        onChange={(e) => setTerm(e)}
-      />
-      <button onClick={(e) => props.onSearch(term)}>Search</button>
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      <label>Search locations</label>
+      <span style={{ display: "flex", flexDirection: "row" }}>
+        <input
+          type="text"
+          onKeyDown={(e) => handleKeyDown(e)}
+          placeholder="Search.."
+          onChange={(e) => handleOnChage(e)}
+        />
+        <button onClick={(e) => props.onSearch(term)}>Search</button>
+      </span>
     </div>
   );
 };

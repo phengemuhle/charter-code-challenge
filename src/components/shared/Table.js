@@ -6,7 +6,6 @@ const Table = (props) => {
   const [isSelected, setIsSelected] = useState([]);
 
   useEffect(() => {
-    console.log("to table", props.fetch);
     setDisplay(props.fetch);
   }, [props.fetch]);
 
@@ -92,7 +91,7 @@ const Table = (props) => {
       <tbody>
         {display.length === 0 ? (
           <>
-            <tr>
+            <tr key="noSearch">
               <td></td>
               <td></td>
               <td>Please try your search again.</td>
@@ -106,26 +105,6 @@ const Table = (props) => {
       </tbody>
     </table>
   );
-};
-
-const styles = {
-  mainContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "black",
-    height: "100%",
-    color: "white",
-    flexDirection: "column",
-  },
-  cardContainer: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignSelf: "center",
-    height: "100%",
-    borderBottom: "1px solid black ",
-  },
 };
 
 export default Table;
